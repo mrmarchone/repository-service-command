@@ -11,7 +11,10 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": ">= 7.4.12",
+        "laravel/framework": "^5.0"
+    },
     "extra": {
         "laravel": {
             "providers": [
@@ -23,5 +26,7 @@
         "psr-4": {
             "Mrmarchone\\Repositories\\": "src/"
         }
-    }
+    },
+    "prefer-stable": true,
+    "version": "1.0.0"
 }
