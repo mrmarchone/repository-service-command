@@ -3,6 +3,7 @@
     "description": "Repository Design pattern with Services",
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/mrmarchone/repository-service-command",
     "authors": [
         {
             "name": "mrmarchone",
