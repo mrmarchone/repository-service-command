@@ -12,7 +12,8 @@
     ],
     "require": {
         "php": ">= 7.4.12",
-        "laravel/framework": "^5.0"
+        "laravel/framework": "^5.0",
+        "mrmarchone/repositories": "1.*"
     },
     "extra": {
         "laravel": {
