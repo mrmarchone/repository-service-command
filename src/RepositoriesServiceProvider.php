@@ -14,7 +14,9 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        $this->commands([
+            Repository::class
+        ]);
     }
 
     /**
@@ -24,18 +26,5 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('command.create.repo', function ($app) {
-            return new Repository;
-        });
-        $this->commands([
-            Repository::class
-        ]);
-    }
-
-    public function provides()
-    {
-        return [
-            'command.create.repo'
-        ];
     }
 }
