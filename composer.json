@@ -27,7 +27,7 @@
             "Mrmarchone\\Repositories\\": "src/"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "version": "1.0.0"
 }
