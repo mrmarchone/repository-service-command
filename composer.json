@@ -10,7 +10,6 @@
             "email": "mrmarchone@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">= 7.4.12",
         "laravel/framework": "^5.0"
@@ -27,6 +26,7 @@
             "Mrmarchone\\Repositories\\": "src/"
         }
     },
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "version": "1.0.0"
 }
