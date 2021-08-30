@@ -1,6 +1,6 @@
 <?php
 
-namespace Mrmarchone\Repositories\Console\Commands;
+namespace Mrmarchone\Repositories\Console;
 
 use Illuminate\Console\Command;
 
