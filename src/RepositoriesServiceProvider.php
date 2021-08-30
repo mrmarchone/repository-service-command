@@ -3,7 +3,7 @@
 namespace Mrmarchone\Repositories;
 
 use Illuminate\Support\ServiceProvider;
-use Mrmarchone\Repositories\Console\Commands\Repository;
+use Mrmarchone\Repositories\Commands\Commands\Repository;
 
 class RepositoriesServiceProvider extends ServiceProvider
 {
@@ -14,9 +14,7 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/Console' => base_path('app/Console')
-        ]);
+
     }
 
     /**
@@ -26,6 +24,18 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Code Below
+        $this->app->singleton('command.create.repo', function ($app) {
+            return new Commands\Repository;
+        });
+        $this->commands([
+            Commands\Repository::class
+        ]);
+    }
+
+    public function provides()
+    {
+        return [
+            'command.create.repo'
+        ];
     }
 }
