@@ -14,9 +14,9 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        $this->publishes([
-//            __DIR__ . '/Console/Commands' => base_path('app/Console/Commands')
-//        ]);
+        $this->publishes([
+            __DIR__ . '/Console/Commands' => base_path('app/Console/Commands')
+        ]);
         $this->commands([
             Repository::class,
         ]);
