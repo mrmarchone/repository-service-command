@@ -21,16 +21,6 @@ class Repository extends Command
     protected $description = 'Make New Repository With it\'s interface';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
