@@ -3,6 +3,7 @@
 namespace Mrmarchone\Repositories;
 
 use Illuminate\Support\ServiceProvider;
+use Mrmarchone\Repositories\Console\Commands\Repository;
 
 class RepositoriesServiceProvider extends ServiceProvider
 {
@@ -13,9 +14,14 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/Console/Commands' => base_path('app/Console/Commands')
-        ]);
+//        $this->publishes([
+//            __DIR__ . '/Console/Commands' => base_path('app/Console/Commands')
+//        ]);
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Repository::class,
+            ]);
+        }
     }
 
     /**
