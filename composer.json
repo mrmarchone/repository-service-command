@@ -1,0 +1,26 @@
+{
+    "name": "mrmarchone/repositories",
+    "description": "Repository Design pattern with Services",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mrmarchone",
+            "email": "mrmarchone@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "mrmarchone\\repositories\\RepositoriesServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Mrmarchone\\Repositories\\": "src/"
+        }
+    }
+}
