@@ -17,11 +17,9 @@ class RepositoriesServiceProvider extends ServiceProvider
 //        $this->publishes([
 //            __DIR__ . '/Console/Commands' => base_path('app/Console/Commands')
 //        ]);
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                Repository::class,
-            ]);
-        }
+        $this->commands([
+            Repository::class,
+        ]);
     }
 
     /**
