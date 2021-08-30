@@ -25,7 +25,7 @@ class RepositoriesServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('command.create.repo', function ($app) {
-            return new Repository();
+            return new Repository;
         });
         $this->commands([
             Repository::class
