@@ -21,6 +21,16 @@ class Repository extends Command
     protected $description = 'Make New Repository With it\'s interface';
 
     /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
      * Execute the console command.
      *
      * @return mixed
@@ -29,8 +39,18 @@ class Repository extends Command
     {
         $nameOfRepository = $this->argument('repo');
         $service = $this->option('service');
-        $dist = 'app/Repository/Eloquent/';
+        $dist = 'app/Repository/';
         $servicesDist = 'app/Services/';
+        $nameSpace = '\\';
+        if (strpos($nameOfRepository, '/') !== false) {
+            $folders = explode('/', $nameOfRepository);
+            $nameOfRepository = $folders[count($folders) - 1];
+            array_pop($folders);
+            $folderString = implode('/', $folders);
+            $dist .= $folderString . '/';
+            $servicesDist .= $folderString . '/';
+            $nameSpace .= str_replace('/', '\\', $folderString);
+        }
         if (!file_exists($dist)) {
             mkdir($dist, 0777, true);
         }
@@ -39,8 +59,8 @@ class Repository extends Command
             $thisVar = '$this';
             if ($service) {
                 $code = "<?php
-namespace App\Repository\Eloquent;
-use App\Services\\" . $nameOfRepository . "Service;
+namespace App\Repository$nameSpace;
+use App\Services" . $nameSpace . '\\' . $nameOfRepository . "Service;
 class " . $nameOfRepository . "Repository
 {
     protected $$nameOfRepository;
@@ -51,7 +71,7 @@ class " . $nameOfRepository . "Repository
 }";
             } else {
                 $code = "<?php
-namespace App\Repository\Eloquent;
+namespace App\Repository$nameSpace;
 class " . $nameOfRepository . "Repository
 {
 }";
@@ -69,7 +89,7 @@ class " . $nameOfRepository . "Repository
             if (!file_exists($servicesDist . $nameOfRepository . 'Service.php')) {
                 $file_two = fopen($servicesDist . $nameOfRepository . 'Service.php', 'w') or $this->error('Unable To Create File');
                 $code_service = "<?php
-namespace App\Services;
+namespace App\Services$nameSpace;
 class " . $nameOfRepository . "Service
 {
 }";
