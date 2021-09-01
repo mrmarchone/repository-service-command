@@ -12,7 +12,7 @@ class RepositoryCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'create:repo {repo} {--service}';
+    protected $signature = 'repository:create {repo} {--service}';
 
     /**
      * The console command description.
