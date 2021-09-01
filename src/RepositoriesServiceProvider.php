@@ -3,7 +3,7 @@
 namespace Mrmarchone\Repositories;
 
 use Illuminate\Support\ServiceProvider;
-use Mrmarchone\Repositories\Commands\Repository;
+use Mrmarchone\Repositories\Commands\RepositoryCommand;
 
 class RepositoriesServiceProvider extends ServiceProvider
 {
@@ -16,7 +16,7 @@ class RepositoriesServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                Repository::class
+                RepositoryCommand::class
             ]);
         }
     }
