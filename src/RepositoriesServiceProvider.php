@@ -23,10 +23,9 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                RepositoryCommand::class
-            ]);
-        }
+        $this->app->singleton('create.repo', function ($app) {
+            return new RepositoryCommand();
+        });
+        $this->commands(['create.repo']);
     }
 }
