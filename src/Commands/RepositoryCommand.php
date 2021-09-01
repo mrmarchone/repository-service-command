@@ -4,7 +4,7 @@ namespace Mrmarchone\Repositories\Commands;
 
 use Illuminate\Console\Command;
 
-class Repository extends Command
+class RepositoryCommand extends Command
 {
     /**
      * The name and signature of the console command.
