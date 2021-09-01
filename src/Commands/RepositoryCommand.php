@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 
 class RepositoryCommand extends Command
 {
+    protected $hidden = false;
     /**
      * The name and signature of the console command.
      *
