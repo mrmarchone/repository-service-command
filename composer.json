@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Mrmarchone\\Repositories\\": "src/"
+            "Mrmarchone\\Repositories\\": "packages/mrmarchone/repositories/src"
         }
     },
     "minimum-stability": "dev",
