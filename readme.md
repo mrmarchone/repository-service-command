@@ -3,3 +3,6 @@
 ##### 2 - php artisan create:repo NameOfYourRepo
 ### if you want service with repository
 ##### php artisan create:repo NameOfYourRepo --service
+
+### For laravel <= 5.4
+##### add this "\Mrmarchone\Repositories\RepositoriesServiceProvider::class" to providers in app file in config folder
