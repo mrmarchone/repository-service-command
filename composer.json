@@ -17,13 +17,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "mrmarchone\\repositories\\RepositoriesServiceProvider"
+                "Mrmarchone\\Repositories\\RepositoriesServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Mrmarchone\\Repositories\\": "packages/mrmarchone/repositories/src"
+            "Mrmarchone\\Repositories\\": "src"
         }
     },
     "minimum-stability": "dev",
