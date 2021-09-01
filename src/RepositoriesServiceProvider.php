@@ -14,6 +14,11 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                RepositoryCommand::class
+            ]);
+        }
     }
 
     /**
@@ -23,8 +28,5 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->commands([
-            RepositoryCommand::class
-        ]);
     }
 }
